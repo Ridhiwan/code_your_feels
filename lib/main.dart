@@ -1,5 +1,6 @@
 import 'package:daybyday/audiopage.dart';
 import 'package:daybyday/happystage.dart';
+import 'package:daybyday/sadstage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: const AudioPage(),
+      home: const MyHomePage(title: "DaybyDay"),
       //home: const MyHomePage(title: 'DaybyDay'),
     );
   }
@@ -33,13 +34,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +82,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HappyStage()
+                            )
+                        );
+                      },
                       child: Container(
                         height: 100,
                         width: 190,
@@ -127,39 +128,49 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     const SizedBox(height: 20,width: 12,),
-                    Container(
-                      height: 100,
-                      width: 190,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          color: Colors.brown.shade100,
-                          boxShadow: [
-                            const BoxShadow(
-                                offset: Offset(10, 10),
-                                color: Colors.black38,
-                                blurRadius: 20),
-                            BoxShadow(
-                                offset: const Offset(-10, -10),
-                                color: Colors.white.withOpacity(0.85),
-                                blurRadius: 20)
-                          ]),
-                      child: Center(
-                        child: Text(
-                          'SAD:(',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 35,
-                              shadows: [
-                                const Shadow(
-                                    offset: Offset(3, 3),
-                                    color: Colors.black38,
-                                    blurRadius: 10),
-                                Shadow(
-                                    offset: const Offset(-3, -3),
-                                    color: Colors.white.withOpacity(0.85),
-                                    blurRadius: 10)
-                              ],
-                              color: Colors.brown),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SadStage()
+                            )
+                        );
+                      },
+                      child: Container(
+                        height: 100,
+                        width: 190,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                            color: Colors.brown.shade100,
+                            boxShadow: [
+                              const BoxShadow(
+                                  offset: Offset(10, 10),
+                                  color: Colors.black38,
+                                  blurRadius: 20),
+                              BoxShadow(
+                                  offset: const Offset(-10, -10),
+                                  color: Colors.white.withOpacity(0.85),
+                                  blurRadius: 20)
+                            ]),
+                        child: Center(
+                          child: Text(
+                            'SAD:(',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 35,
+                                shadows: [
+                                  const Shadow(
+                                      offset: Offset(3, 3),
+                                      color: Colors.black38,
+                                      blurRadius: 10),
+                                  Shadow(
+                                      offset: const Offset(-3, -3),
+                                      color: Colors.white.withOpacity(0.85),
+                                      blurRadius: 10)
+                                ],
+                                color: Colors.brown),
+                          ),
                         ),
                       ),
                     ),

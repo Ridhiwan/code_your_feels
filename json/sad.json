@@ -1,0 +1,42 @@
+[
+  {
+    "rating": "4.5",
+    "title": "ANOTHER LOVE",
+    "text": "Tom Odell",
+    "art": "assets/images/sad/image1.jpg",
+    "img": "assets/images/sad/image6.jpg",
+    "audio": "audio/sad/tomodell1.mp3"
+  },
+  {
+    "rating": "4.8",
+    "title": "GOODBYE IS THE ...",
+    "text": "Celine Dion",
+    "art": "assets/images/sad/image2.jpg",
+    "img": "assets/images/sad/image7.jpg",
+    "audio": "audio/sad/celinedion1.mp3"
+  },
+  {
+    "rating": "4.7",
+    "title": "I KNOW",
+    "text": "Tom Odell",
+    "art": "assets/images/sad/image3.jpg",
+    "img": "assets/images/sad/image8.jpg",
+    "audio": "audio/sad/tomodell2.mp3"
+  },
+  {
+    "rating": "4.5",
+    "title": "MAGNETISED",
+    "text": "Tom Odell",
+    "art": "assets/images/sad/image4.jpg",
+    "img": "assets/images/sad/image9.jpg",
+    "audio": "audio/sad/tomodell3.mp3"
+  },
+  {
+    "rating": "4.6",
+    "title": "HEAL",
+    "text": "Tom Odell",
+    "art": "assets/images/sad/image5.jpg",
+    "img": "assets/images/sad/image10.jpg",
+    "audio": "audio/sad/tomodell4.mp3"
+  }
+]

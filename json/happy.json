@@ -1,42 +1,42 @@
 [
   {
     "rating": "4.5",
-    "title": "THE GRID",
-    "text": "Martin Hyatt",
+    "title": "HALF AS GOOD AS YOU",
+    "text": "Tom Odell",
     "art": "assets/images/happy/image1.jpg",
     "img": "assets/images/happy/image6.jpg",
-    "Audio": "Voices.mp3"
+    "audio": "audio/happy/tomodell1.mp3"
   },
   {
     "rating": "4.5",
-    "title": "THE GRID",
-    "text": "Martin Hyatt",
+    "title": "GROW OLD WITH ME",
+    "text": "Tom Odell",
     "art": "assets/images/happy/image2.jpg",
     "img": "assets/images/happy/image7.jpg",
-    "Audio": "Voices.mp3"
+    "audio": "audio/happy/tomodell2.mp3"
   },
   {
-    "rating": "4.5",
-    "title": "THE GRID",
-    "text": "Martin Hyatt",
+    "rating": "4.2",
+    "title": "GO TELL HER NOW",
+    "text": "Tom Odell",
     "art": "assets/images/happy/image3.jpg",
     "img": "assets/images/happy/image8.jpg",
-    "Audio": "Voices.mp3"
+    "audio": "audio/happy/tomodell3.mp3"
   },
   {
-    "rating": "4.5",
-    "title": "THE GRID",
-    "text": "Martin Hyatt",
+    "rating": "4.4",
+    "title": "STOLE THE SHOW",
+    "text": "Tom Odell",
     "art": "assets/images/happy/image4.jpg",
     "img": "assets/images/happy/image9.jpg",
-    "Audio": "Voices.mp3"
+    "audio": "audio/happy/kygo1.mp3"
   },
   {
     "rating": "4.5",
-    "title": "THE GRID",
-    "text": "Martin Hyatt",
+    "title": "IT AIN'T ME",
+    "text": "Kygo & Selena Gomez",
     "art": "assets/images/happy/image5.jpg",
     "img": "assets/images/happy/image10.jpg",
-    "Audio": "Voices.mp3"
+    "audio": "audio/happy/kygo2.mp3"
   }
 ]
