@@ -1,3 +1,5 @@
+import 'package:daybyday/audiopage.dart';
+import 'package:daybyday/happystage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,11 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'DaybyDay',
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: const MyHomePage(title: 'DaybyDay'),
+      home: const AudioPage(),
+      //home: const MyHomePage(title: 'DaybyDay'),
     );
   }
 }
@@ -83,39 +87,42 @@ class _MyHomePageState extends State<MyHomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 100,
-                      width: 190,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          color: Colors.yellow.shade100,
-                          boxShadow: [
-                            const BoxShadow(
-                                offset: Offset(10, 10),
-                                color: Colors.black38,
-                                blurRadius: 20),
-                            BoxShadow(
-                                offset: const Offset(-10, -10),
-                                color: Colors.white.withOpacity(0.85),
-                                blurRadius: 20)
-                          ]),
-                      child: Center(
-                        child: Text(
-                          'HAPPY!',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 35,
-                              shadows: [
-                                const Shadow(
-                                    offset: Offset(3, 3),
-                                    color: Colors.black38,
-                                    blurRadius: 10),
-                                Shadow(
-                                    offset: const Offset(-3, -3),
-                                    color: Colors.white.withOpacity(0.85),
-                                    blurRadius: 10)
-                              ],
-                              color: Colors.yellow),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        height: 100,
+                        width: 190,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                            color: Colors.yellow.shade100,
+                            boxShadow: [
+                              const BoxShadow(
+                                  offset: Offset(10, 10),
+                                  color: Colors.black38,
+                                  blurRadius: 20),
+                              BoxShadow(
+                                  offset: const Offset(-10, -10),
+                                  color: Colors.white.withOpacity(0.85),
+                                  blurRadius: 20)
+                            ]),
+                        child: Center(
+                          child: Text(
+                            'HAPPY!',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 35,
+                                shadows: [
+                                  const Shadow(
+                                      offset: Offset(3, 3),
+                                      color: Colors.black38,
+                                      blurRadius: 10),
+                                  Shadow(
+                                      offset: const Offset(-3, -3),
+                                      color: Colors.white.withOpacity(0.85),
+                                      blurRadius: 10)
+                                ],
+                                color: Colors.yellow),
+                          ),
                         ),
                       ),
                     ),
@@ -162,11 +169,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
