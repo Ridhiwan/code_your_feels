@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:daybyday/audiopage.dart';
-import 'package:daybyday/tabs.dart';
+import 'package:daybyday/custom_widgets/tabs.dart';
+import 'package:daybyday/pages/audiopage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
