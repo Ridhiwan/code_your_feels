@@ -1,13 +1,31 @@
+import 'package:daybyday/audiofile.dart';
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class AudioPage extends StatefulWidget {
-  const AudioPage({Key? key}) : super(key: key);
+  final List jsonData;
+  final int index;
+  const AudioPage({Key? key, required this.index, required this.jsonData}) : super(key: key);
 
   @override
   State<AudioPage> createState() => _AudioPageState();
 }
 
 class _AudioPageState extends State<AudioPage> {
+  AudioPlayer advancedPlayer = AudioPlayer();
+
+  @override
+  void initState() {
+    super.initState();
+    advancedPlayer = AudioPlayer();
+  }
+
+  @override
+  void dispose() {
+    advancedPlayer.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
@@ -33,7 +51,9 @@ class _AudioPageState extends State<AudioPage> {
             child: AppBar(
               leading: IconButton(
                 icon: const Icon(Icons.arrow_back_ios_new_rounded, ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
               ),
               actions: [
                 IconButton(
@@ -58,17 +78,22 @@ class _AudioPageState extends State<AudioPage> {
               child: Column(
                 children: [
                   SizedBox(height: screenHeight*0.12,),
-                  const Text("THE WATER CURE",
-                  style: TextStyle(
+                  Text(widget.jsonData[widget.index]["title"],
+                  style: const TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
                   ),
-                  const Text("Martin Hyatt",
-                  style: TextStyle(
+                  Text(widget.jsonData[widget.index]["text"],
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w400,
                   ),
+                  ),
+                  Expanded(
+                      child: AudioFile(
+                        advancedPlayer: advancedPlayer, audioPath: widget.jsonData[widget.index]["audio"],
+                      )
                   ),
                 ],
               ),
@@ -83,10 +108,10 @@ class _AudioPageState extends State<AudioPage> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                    color: Colors.grey,
+                    color: Colors.deepOrange.shade200,
                     width: 2,
                   ),
-                  color: Colors.grey.withOpacity(0.8)
+                  color: Colors.deepOrange.shade300.withOpacity(0.6)
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -97,8 +122,8 @@ class _AudioPageState extends State<AudioPage> {
                           color: Colors.white,
                           width: 5,
                         ),
-                        image: const DecorationImage(
-                          image: AssetImage("assets/images/happy/image6.jpg"),
+                        image: DecorationImage(
+                          image: AssetImage(widget.jsonData[widget.index]["img"]),
                           fit: BoxFit.cover,
                         ),
                       ),

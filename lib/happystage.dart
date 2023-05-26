@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:daybyday/audiopage.dart';
 import 'package:daybyday/tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -122,69 +123,82 @@ class _HappyStageState extends State<HappyStage> with SingleTickerProviderStateM
                       ListView.builder(
                         itemCount: _happy.length,
                         itemBuilder: (context, index) {
-                        return Container(
-                          margin: const EdgeInsets.all(10),
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AudioPage(
+                                      jsonData: _happy,
+                                      index: index,
+                                    )
+                                )
+                            );
+                          },
                           child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.white70,
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 2,
-                                  offset: const Offset(0,0),
-                                  color: Colors.grey.withOpacity(0.2)
-                                ),
-                              ]
-                            ),
-                           child: Padding(
-                             padding: const EdgeInsets.all(8.0),
-                             child: Row(
-                               children: [
-                                 Container(
-                                   width: 90,
-                                   height: 120,
-                                   decoration: BoxDecoration(
-                                     borderRadius: BorderRadius.circular(10),
-                                     image: DecorationImage(
-                                       image: AssetImage(_happy[index]["img"]),
-                                       fit: BoxFit.fill
-                                     )
+                            margin: const EdgeInsets.all(10),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.white70,
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 2,
+                                    offset: const Offset(0,0),
+                                    color: Colors.grey.withOpacity(0.2)
+                                  ),
+                                ]
+                              ),
+                             child: Padding(
+                               padding: const EdgeInsets.all(8.0),
+                               child: Row(
+                                 children: [
+                                   Container(
+                                     width: 90,
+                                     height: 120,
+                                     decoration: BoxDecoration(
+                                       borderRadius: BorderRadius.circular(10),
+                                       image: DecorationImage(
+                                         image: AssetImage(_happy[index]["img"]),
+                                         fit: BoxFit.fill
+                                       )
+                                     ),
                                    ),
-                                 ),
-                                 const SizedBox(width: 10,),
-                                 Column(
-                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                   children: [
-                                     Row(
-                                       children: [
-                                         const Icon(
-                                           Icons.star,
-                                           size: 24,
-                                           color: Color.fromRGBO(255, 153, 0, 1),
-                                         ),
-                                         const SizedBox(width: 5,),
-                                         Text(_happy[index]["rating"],
-                                             style: const TextStyle( color: Colors.deepOrange),
-                                         ),
-                                       ],
-                                     ),
-                                     Text(_happy[index]["title"],
-                                     style: const TextStyle(
-                                       fontSize: 15,
-                                       fontWeight: FontWeight.bold
-                                     ) ,
-                                     ),
-                                     Text(_happy[index]["text"],
-                                     style: const TextStyle(
-                                       fontSize: 12,
-                                       color: Colors.blueGrey
-                                     ) ,
-                                     ),
-                                   ],
-                                 )
-                               ],
+                                   const SizedBox(width: 10,),
+                                   Column(
+                                     crossAxisAlignment: CrossAxisAlignment.start,
+                                     children: [
+                                       Row(
+                                         children: [
+                                           const Icon(
+                                             Icons.star,
+                                             size: 24,
+                                             color: Color.fromRGBO(255, 153, 0, 1),
+                                           ),
+                                           const SizedBox(width: 5,),
+                                           Text(_happy[index]["rating"],
+                                               style: const TextStyle( color: Colors.deepOrange),
+                                           ),
+                                         ],
+                                       ),
+                                       Text(_happy[index]["title"],
+                                       style: const TextStyle(
+                                         fontSize: 15,
+                                         fontWeight: FontWeight.bold
+                                       ) ,
+                                       ),
+                                       Text(_happy[index]["text"],
+                                       style: const TextStyle(
+                                         fontSize: 12,
+                                         color: Colors.blueGrey
+                                       ) ,
+                                       ),
+                                     ],
+                                   )
+                                 ],
+                               ),
                              ),
-                           ),
+                            ),
                           ),
                         );
                       },),
