@@ -1,4 +1,4 @@
-import 'package:daybyday/audiofile.dart';
+import 'package:daybyday/audioprovider/audiofile.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
