@@ -1,16 +1,11 @@
 # daybyday
 
-A new Flutter project.
+Express your feelings with Music and Art.
 
 ## Getting Started
+On the home screen you will choose if you feel happy or sad.
+The App will create a playlist and works of art for you depending on how you feel at the moment.
+The art and music are intended for therapeutic purposes.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Future addons
+Use of AI to choose the best Art and music from around the globe.
