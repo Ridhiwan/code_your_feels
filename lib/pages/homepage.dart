@@ -15,6 +15,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text(widget.title,textAlign: TextAlign.center)),
@@ -153,7 +155,48 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ],
-              )
+              ),
+              const SizedBox(height: 30,),
+              Center(
+                child: Text(
+                    "An ASCII Art message for you :)",
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w700,
+                      fontStyle: FontStyle.italic,
+                      color: const Color.fromRGBO(200, 100, 100, 1),
+                      shadows: [
+                        const Shadow(
+                          color: Color.fromRGBO(10, 200, 150, 1),
+                          blurRadius: 10.0,
+                          offset: Offset(5.0, 5.0),
+                        ),
+                        Shadow(
+                          color: Colors.yellow.shade300,
+                          blurRadius: 5.0,
+                          offset: const Offset(-5.0, 5.0),
+                        ),
+                      ],
+                    )
+
+                ),
+              ),
+              const SizedBox(height: 20,),
+              Container(
+                height: 500,
+                width: 400,
+                decoration: const BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 10,
+                      color: Colors.deepOrange,
+                      offset: Offset(0.3, 0.3)
+                    )
+                  ]
+                ),
+                child: Image.asset("assets/images/feelings.png",
+                fit: BoxFit.fill,)
+              ),
             ],
           ),
         ),
